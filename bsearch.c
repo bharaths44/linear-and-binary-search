@@ -3,6 +3,7 @@
 #include<stdlib.h>
 struct timeval t0;
 struct timeval t1;
+float elapsed;
 
 float timedifference_msec(struct timeval t0, struct timeval t1)
 {
