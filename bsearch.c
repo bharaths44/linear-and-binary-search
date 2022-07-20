@@ -14,7 +14,7 @@ int binsearch(long arr[],int l,int r,int key)
 {
     while (l<=r) 
     {
-        int m = l + (r - l) / 2;
+        int m = (l + r) / 2;
 		if (arr[m] == key)
             return m;
         if (arr[m] < key)
