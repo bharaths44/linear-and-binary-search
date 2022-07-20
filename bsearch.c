@@ -12,8 +12,7 @@ float timedifference_msec(struct timeval t0, struct timeval t1)
 
 int binsearch(long arr[],int l,int r,int key)
 {
-	gettimeofday(&t0, NULL);
-    while (l <= r) 
+    while (l<=r) 
     {
         int m = l + (r - l) / 2;
 		if (arr[m] == key)
@@ -23,15 +22,12 @@ int binsearch(long arr[],int l,int r,int key)
         else
             r = m - 1;
     }
-    gettimeofday(&t1, NULL);
-    elapsed = timedifference_msec(t0, t1);
-    printf("Code executed in %f milliseconds.\n", elapsed);
  return -1;
 }
 
 void main()
 {
-   	float elapsed;
+   float elapsed;
     long *arr;
     int key,num,i,x,pos,y,temp,result;
     printf("Enter number of elements in array :");
@@ -43,15 +39,16 @@ void main()
         for(i = 0; i < num; i++)
             arr[i] = rand()%100;
     }
+    printf("The array is :");
+    for(i=0;i<num;i++)
+    	printf("| %ld |",arr[i]);
     for(x = 0; x < num - 1; x++)
     {
         pos=x;
         for(y = x + 1; y < num; y++)
         {
             if(arr[pos] > arr[y])
-            {
                 pos=y;
-            }
         }
         if(pos!= x)
         {
@@ -60,16 +57,16 @@ void main()
             arr[pos]=temp;
         }
     }
-    printf("Enter element to be found :");
+    printf("\nEnter element to be found :");
     scanf("%d",&key);
+    gettimeofday(&t0, NULL);
     result=binsearch(arr,0,num-1,key);
     if(result==-1)
     	printf("Element not found\n");
     else
     	printf("Element found\n");
+    gettimeofday(&t1, NULL);
+    elapsed = timedifference_msec(t0, t1);
+    printf("Code executed in %f milliseconds.\n", elapsed);
  }
-    	
-
-
-   
- 
+    

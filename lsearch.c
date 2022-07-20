@@ -15,16 +15,16 @@ void main()
     int key,num,i;
     printf("Enter number of elements in array :");
     scanf("%d",&num);
-    arr = (long *)malloc(sizeof(long)*num);
-    srand( (unsigned) time(NULL) * getpid());
-    if(arr != NULL)
+    arr=(long*)malloc(sizeof(long)*num);
+    srand((unsigned)time(NULL)*getpid());
+    if(arr!=NULL)
     {
-        for(i = 0; i < num; i++)
+        for(i=0;i<num;i++)
             arr[i] = rand()%100;
     }
-	//printf("The array is :");
-    //for(i = 0; i < num; i++)
-        //printf("| %ld |",arr[i]);
+    printf("The array is :");
+     for(i=0;i<num;i++)
+    	printf("| %ld |",arr[i]);
     printf("\nEnter element to be searched :");
     scanf("%d",&key);
     gettimeofday(&t0, NULL);
@@ -34,13 +34,13 @@ void main()
     	{
     		printf("Element found at %d\n",i);
     		gettimeofday(&t1, NULL);
-			elapsed = timedifference_msec(t0, t1);
+			elapsed=timedifference_msec(t0, t1);
 			printf("Code executed in %f milliseconds.\n", elapsed);
     		exit(0);
     	}
     }
     printf("Element not found\n");
     gettimeofday(&t1, NULL);
-	elapsed = timedifference_msec(t0, t1);
-	printf("Code executed in %f milliseconds.\n", elapsed);
+    elapsed=timedifference_msec(t0, t1);
+    printf("Code executed in %f milliseconds.\n", elapsed);
 }
