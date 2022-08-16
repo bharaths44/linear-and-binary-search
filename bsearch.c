@@ -15,7 +15,7 @@ int binsearch(long arr[],int l,int r,int key)
     while (l<=r) 
     {
         int m = (l + r) / 2;
-		if (arr[m] == key)
+	if (arr[m] == key)
             return m;
         if (arr[m] < key)
             l = m + 1;
@@ -27,7 +27,7 @@ int binsearch(long arr[],int l,int r,int key)
 
 void main()
 {
-   float elapsed;
+    float elapsed;
     long *arr;
     int key,num,i,x,pos,y,temp,result;
     printf("Enter number of elements in array :");
